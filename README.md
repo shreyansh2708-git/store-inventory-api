@@ -135,6 +135,9 @@ http://localhost:8080/h2-console
 ## 📸 Screenshots
 
 *(Add Postman screenshots here)*
+<img width="1065" height="879" alt="Screenshot 2026-05-18 183918" src="https://github.com/user-attachments/assets/cf460c5e-522d-4f65-8c62-9987ba10078d" />
+<img width="1053" height="881" alt="Screenshot 2026-05-18 183843" src="https://github.com/user-attachments/assets/eb9062be-0c5f-486e-8a93-7f49acff5a97" />
+<img width="1050" height="490" alt="Screenshot 2026-05-18 184026" src="https://github.com/user-attachments/assets/49345ac8-d40c-4042-bd15-9059f6038763" />
 
 ---
 
