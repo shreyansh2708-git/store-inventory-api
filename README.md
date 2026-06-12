@@ -26,53 +26,35 @@ A production-style RESTful backend built with **Java 17 and Spring Boot 3.5** to
 ---
 
 ## 📐 Architecture
+
+```text
 ┌─────────────────────────────────────────────────┐
-
-│                   Client (Postman / Frontend)    │
-
+│                   Client (Postman / Frontend)   │
 └──────────────────────┬──────────────────────────┘
-
-│ HTTP Request
-
-▼
-
+                       │ HTTP Request
+                       ▼
 ┌─────────────────────────────────────────────────┐
-
-│             Controller Layer                     │
-
-│         ItemController.java                      │
-
-│   (Route handling, request/response mapping)     │
-
+│             Controller Layer                    │
+│         ItemController.java                     │
+│   (Route handling, request/response mapping)    │
 └──────────────────────┬──────────────────────────┘
-
-│
-
-▼
-
+                       │
+                       ▼
 ┌─────────────────────────────────────────────────┐
-
-│             Repository Layer                     │
-
-│         ItemRepository.java                      │
-
-│   (Spring Data JPA — auto-generated SQL queries) │
-
+│             Repository Layer                    │
+│         ItemRepository.java                     │
+│   (Spring Data JPA — auto-generated SQL queries)│
 └──────────────────────┬──────────────────────────┘
-
-│
-
-▼
-
+                       │
+                       ▼
 ┌─────────────────────────────────────────────────┐
+│             Database Layer                      │
+│         H2 In-Memory (inventorydb)              │
+│   (Persists Item entities during runtime)       │
+└─────────────────────────────────────────────────┘
+```
 
-│             Database Layer                       │
-
-│         H2 In-Memory (inventorydb)               │
-
-│   (Persists Item entities during runtime)        │
-
-└─────────────────────────────────────────────────┘---
+---
 
 ## 📦 Features
 
@@ -86,29 +68,22 @@ A production-style RESTful backend built with **Java 17 and Spring Boot 3.5** to
 ---
 
 ## 🗂️ Project Structure
+
+```text
 src/main/java/com/walmart/inventory/
-
 │
-
 ├── model/
-
 │   └── Item.java                  # JPA Entity — maps to DB table
-
 │
-
 ├── repository/
-
 │   └── ItemRepository.java        # Spring Data JPA — zero boilerplate SQL
-
 │
-
 ├── controller/
-
 │   └── ItemController.java        # REST endpoints — routes all HTTP traffic
-
 │
-
 └── InventoryApplication.java      # Spring Boot entry point
+```
+
 ---
 
 ## ⚙️ Running Locally
@@ -117,7 +92,7 @@ src/main/java/com/walmart/inventory/
 
 ```bash
 # Clone the repository
-git clone https://github.com/shreyansh2708-git/store-inventory-api.git
+git clone [https://github.com/shreyansh2708-git/store-inventory-api.git](https://github.com/shreyansh2708-git/store-inventory-api.git)
 
 # Navigate into the project
 cd store-inventory-api
@@ -184,7 +159,7 @@ Live database viewer available at: **`http://localhost:8080/h2-console`**
 |----------|--------------------------|
 | JDBC URL | `jdbc:h2:mem:inventorydb`|
 | Username | `sa`                     |
-| Password | *(leave blank)*          |
+| Password | *(leave blank)* |
 
 ---
 
@@ -205,10 +180,7 @@ Zero-config in-memory setup makes local development and testing fast. Migrating 
 
 | Add Product | Get All Products | Update Stock |
 |-------------|-----------------|--------------|
-| ![POST](<img width="1053" height="881" alt="Screenshot 2026-05-18 183843" src="https://github.com/user-attachments/assets/9c1c2060-d248-4d0d-be07-d4289638c11d" />
-) | ![GET](<img width="1065" height="879" alt="Screenshot 2026-05-18 183918" src="https://github.com/user-attachments/assets/bd6c4d34-4415-45f0-aad4-380746bd106f" />
-) | ![PATCH](<img width="1050" height="490" alt="Screenshot 2026-05-18 184026" src="https://github.com/user-attachments/assets/7cf5d869-25fa-4661-bca9-8a2f24e665b9" />
-) |
+| <img width="100%" alt="POST Request" src="https://github.com/user-attachments/assets/9c1c2060-d248-4d0d-be07-d4289638c11d" /> | <img width="100%" alt="GET Request" src="https://github.com/user-attachments/assets/bd6c4d34-4415-45f0-aad4-380746bd106f" /> | <img width="100%" alt="PATCH Request" src="https://github.com/user-attachments/assets/7cf5d869-25fa-4661-bca9-8a2f24e665b9" /> |
 
 ---
 
